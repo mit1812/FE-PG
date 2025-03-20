@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { MenuItem, Pagination, Select, SelectChangeEvent } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import PokemonCard from "./components/pokemonCard";
 import { PokemonData } from "./types/Pokemon";
+import Paginator from "./components/Paginator";
+import LimitOptions from "./components/LimitOptions";
 
 export default function Pokemon() {
   const [pokemonData, setPokemonData] = useState<PokemonData | null>(null);
@@ -28,19 +30,12 @@ export default function Pokemon() {
     totalPages = Math.ceil(pokemonData.count / limit);
   }
 
-  const handlePagination = (
-    event: React.ChangeEvent<unknown>,
-    value: number
-  ) => {
-    setPage(value);
-  };
-
-  const handleLimit = (event: SelectChangeEvent<number>) => {
-    setLimit(Number(event.target.value));
-    setPage(1);
-  };
-
-  if (!pokemonData) return <div>Loading...</div>;
+  if (!pokemonData)
+    return (
+      <div className="flex justify-center mt-32">
+        <CircularProgress />
+      </div>
+    );
 
   return (
     <>
@@ -53,17 +48,8 @@ export default function Pokemon() {
         </div>
       </ul>
       <div className="flex flex-row mt-8 justify-center items-center gap-9">
-        <Pagination
-          count={totalPages}
-          page={page}
-          onChange={handlePagination}
-        />
-        <Select value={limit} onChange={handleLimit}>
-          <MenuItem value={5}>5</MenuItem>
-          <MenuItem value={10}>10</MenuItem>
-          <MenuItem value={20}>20</MenuItem>
-          <MenuItem value={50}>50</MenuItem>
-        </Select>
+        <Paginator totalPages={totalPages} page={page} setPage={setPage} />
+        <LimitOptions limit={limit} setLimit={setLimit} setPage={setPage} />
       </div>
     </>
   );

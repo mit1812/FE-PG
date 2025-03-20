@@ -9,9 +9,9 @@ interface PokemonCardProps {
   key: number;
 }
 
-export default function PokemonCard({ pokemon, key }: PokemonCardProps) {
+export default function PokemonCard({ pokemon }: PokemonCardProps) {
   return (
-    <Link key={key} href={pokemon.url} className="p-4 w-1/6 min-w-[150px]">
+    <Link href={pokemon.url} className="p-4 w-1/6 min-w-[150px]">
       <Card variant="outlined">
         <CardContent>
           <p className="text-center">{pokemon.name}</p>
