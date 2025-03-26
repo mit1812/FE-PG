@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PokeData
 
-## Getting Started
+PokeData is a React application that displays a list of Pokémon using the PokeAPI. It features pagination and allows users to select the number of Pokémon displayed per page.
 
-First, run the development server:
+## Requirements
+
+- [x] Implement a page for browsing through all pokemon data provided by a REST API Endpoint
+- [x] Allow displaying of the pokemon details
+- [x] Cover the code by tests where appropriated
+- [x] Include pagination that corresponds with API
+- [x] (bonus) Include 5, 10, 50 limits per page functionality
+
+## Features
+
+- Display a list of Pokémon with pagination.
+- Select the number of Pokémon to display per page.
+- Responsive design using Material-UI.
+- Unit tests using Jest and React Testing Library.
+
+## Installation
+
+To get started with the project, follow these steps:
+
+1. **Clone the repository:**
+
+2. **Install dependencies:**
+
+   Make sure you have [Node.js](https://nodejs.org/) installed, then run:
+
+   ```bash
+   npm install
+   ```
+
+## Usage
+
+To run the application locally, use the following command:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the development server, and you can view the application in your browser at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Testing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To run the tests, use the following command:
 
-## Learn More
+```bash
+npm test
+```
 
-To learn more about Next.js, take a look at the following resources:
+This will execute the test suite using Jest and React Testing Library.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **`src/app/components`**: Contains the React components used in the application.
+- **`src/app/tests`**: Contains the test files for the components.
+- **`src/app/types`**: Contains TypeScript type definitions.
+- **`src/app/page.tsx`**: The main
