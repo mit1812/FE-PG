@@ -1,4 +1,4 @@
-# PokeData
+# FEPG
 
 PokeData is a React application that displays a list of Pokémon using the PokeAPI. It features pagination and allows users to select the number of Pokémon displayed per page.
 
