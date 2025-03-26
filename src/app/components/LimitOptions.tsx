@@ -15,12 +15,16 @@ export default function LimitOptions({
     setLimit(Number(event.target.value));
     setPage(1);
   };
+
+  const menuItemValues = [5, 10, 20, 50];
+
   return (
     <Select value={limit} onChange={handleLimit}>
-      <MenuItem value={5}>5</MenuItem>
-      <MenuItem value={10}>10</MenuItem>
-      <MenuItem value={20}>20</MenuItem>
-      <MenuItem value={50}>50</MenuItem>
+      {menuItemValues.map((menuItemValue) => (
+        <MenuItem key={menuItemValue} value={menuItemValue}>
+          {menuItemValue}
+        </MenuItem>
+      ))}
     </Select>
   );
 }
