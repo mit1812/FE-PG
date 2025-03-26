@@ -1,7 +1,5 @@
 # FEPG
 
-PokeData is a React application that displays a list of Pokémon using the PokeAPI. It features pagination and allows users to select the number of Pokémon displayed per page.
-
 ## Requirements
 
 - [x] Implement a page for browsing through all pokemon data provided by a REST API Endpoint
