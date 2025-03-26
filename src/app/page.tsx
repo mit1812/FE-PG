@@ -6,6 +6,7 @@ import PokemonCard from "./components/pokemonCard";
 import { PokemonData } from "./types/Pokemon";
 import Paginator from "./components/Paginator";
 import LimitOptions from "./components/LimitOptions";
+import { apiBase } from "./constants";
 
 export default function Pokemon() {
   const [pokemonData, setPokemonData] = useState<PokemonData | null>(null);
@@ -14,11 +15,8 @@ export default function Pokemon() {
 
   useEffect(() => {
     async function fetchPokemon() {
-      const res = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${
-          (page - 1) * limit
-        }`
-      );
+      const offset = (page - 1) * limit;
+      const res = await fetch(apiBase + `?limit=${limit}&offset=${offset}`);
       const data: PokemonData = await res.json();
       setPokemonData(data);
     }
